@@ -23,19 +23,17 @@ var Module = function(test) {
 // そのコンストラクタのプロトタイプを修正
 Module.prototype = functioin() {
   function _publicMethod() {
+    // ここでのthisはメソッド呼び出し元のインスタンス
+    // それを渡ささないと、この関数オブジェクトのthisを参照しちゃう
     _privateMethod(this);
   }
 
-  // thisと書いて本当はModuleを参照したいが、
+  // thisと書いて本当はインスタンスを参照したいが、
   // 関数の中でthisと書くと呼び出し元のthis（関数）を参照してしまう。
   // なので、関数から関数を呼ぶ場合はthisを変数に入れて持ち回らせる
   function _privateMethod(thisObj) {
     console.log(thisObj.test);
   }
-
-  // もしかしてここで以下のように宣言すれば
-  // 引数に渡さなくてもthisを参照できる？
-  var self = this;// ここでModuleのthisを変数にいれてselfをあちこちで使う
 
   return {
     publicMethod: _publicMethod
