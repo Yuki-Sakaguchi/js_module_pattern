@@ -6,15 +6,11 @@
 
   一つのメソッド名で複数のメソッドを対応するやり方
   $('div').on('click', function() {}); とかこれ。
-  
+
 */
 
 (function($) {
-  if (typeof $ === 'undefined') {
-    console.log('jQueryがロードされていません');
-    return false;
-  }
-
+  
   var methods = {
     init: function(options) {
 
