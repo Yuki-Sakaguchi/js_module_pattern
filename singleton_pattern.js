@@ -41,7 +41,7 @@ var singleton = (function() {
   }
 
   // instanceが存在すればそれを返し、
-  // なければinit()を実行してinstanceを返す
+  // なければinit()を実行してinstanceに参照オブジェクト代入しそれを返す
   function getInstance() {
     if (!instance) {
       instance = init();

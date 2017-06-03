@@ -8,43 +8,20 @@
   ただのクロージャだけど、一応プライベートなメソッドができる。
   関数内でいろいろ処理を書いて、パブリックにしたいものだけ
   returnする
-
-  プライベートなメソッドへのセッターゲッターを用意したりもできる
 */
 
 var Module = (function() {
 
-  var version = '1.0.0';
+  // private歯こうやって宣言する
+  var _privateVariable = "private";
+  function _privateMethod() { console.log(_privateMethod) }
 
-  function _init() {
-    // initiarize
-  }
-
-  function _call() {
-    console.log(version);
-  }
-
-  // セッター
-  function _set(value) {
-    version = value;
-  }
-
-  // ゲッター
-  function _get() {
-    return version;
-  }
-
-  // プライベートメソッドを呼んだりもする
-  _init();
-
+  // publicはこうやって返す
   return {
-    options: _options,
-    get: _get,
-    set: _set,
-    call: _call
+    publicVariable: "public",
+    publicMethod: function { console.log(publicVariable) }
   }
 })();
 
-Module.call(); //-> '1.0.0'
-Module.set('1.0.1');
-Module.call(); //-> '1.0.1'
+Module.publicMethod(); //-> publicMethod
+Module.privateMethod(); //-> Error（宣言されていないため）
