@@ -26,7 +26,7 @@ var Animal = function(type, name) {
   this.type = (arguments.length >= 0) ? type : 'dog';
   this.name = (arguments.length >= 1) ? name : 'phochi';
 
-  // 0やnullを渡すことがないという状況であれば初めので良い
+  // 0やnullを渡すことがないという状況であれば初めに書いたので良い
 }
 
 Animal.prototype.call = function() {
