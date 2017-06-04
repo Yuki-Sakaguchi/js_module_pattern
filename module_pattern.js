@@ -12,7 +12,7 @@
 
 var Module = (function() {
 
-  // private歯こうやって宣言する
+  // privateはこうやって宣言する
   var _privateVariable = "private";
   function _privateMethod() { console.log(_privateMethod) }
 
