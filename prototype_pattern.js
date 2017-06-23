@@ -29,6 +29,7 @@ var Animal = function(type, name) {
   // 0やnullを渡すことがないという状況であれば初めに書いたので良い
 }
 
+// Animalクラスの関数は以下のようにプロトタイプに宣言
 Animal.prototype.call = function() {
   console.log(this.name);
 }
