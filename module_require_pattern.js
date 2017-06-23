@@ -8,7 +8,6 @@
   普通にブラウザに読み込んでも動くパターン
 */
 
-
 (function(mod) {
 
   if (typeof exports === "object") {
