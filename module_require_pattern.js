@@ -16,7 +16,7 @@
     module.exports = mod();
 
   } else {
-    // javascript
+    // Browser globals
     window.testModule = mod();
   }
 
